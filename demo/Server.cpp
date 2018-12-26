@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iterator>
 
 #include <RCF/RCF.hpp>
 
