@@ -22,13 +22,16 @@ public:
     }
 };
 
-int main()
+int main(int argc, char **argv)
 {
     RCF::RcfInitDeinit rcfInit;
 
     // Start a TCP server on port 50001, and expose MyServiceImpl.
+	std::string ip = "127.0.0.1";
+	if (argc == 2)
+		ip = argv[1];
     MyServiceImpl myServiceImpl;
-    RCF::RcfServer server( RCF::TcpEndpoint("0.0.0.0", 50001) );
+    RCF::RcfServer server( RCF::TcpEndpoint(ip, 50001) );
     server.bind<MyService>(myServiceImpl);
     server.start();
 
