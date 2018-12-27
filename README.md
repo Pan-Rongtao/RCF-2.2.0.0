@@ -12,7 +12,7 @@ RCF2.2
 mkdir build
 cd build
 cmake ../demo/cmake
-打开sln后编译结果在demo/cmake/bin下
+打开sln后编译结果在demo/cmake/bin下（如果链接有错误，需要删除CMakeLists下的-DBOOST_ALL_NO_LIB
 
 2、如何编译x11
 与编译vs步骤一致
