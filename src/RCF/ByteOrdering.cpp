@@ -48,7 +48,7 @@ namespace RCF {
 
     const ByteOrder MachineByteOrder = LittleEndian;
 
-#elif defined(__x86_64) || defined(__x86_64__)
+#elif defined(__x86_64) || defined(__x86_64__) || defined(__QNX__) || defined(__linux__)
 
     const ByteOrder MachineByteOrder = LittleEndian;
 

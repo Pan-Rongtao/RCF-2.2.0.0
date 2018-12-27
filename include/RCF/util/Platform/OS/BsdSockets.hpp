@@ -25,7 +25,7 @@
 #include "Windows/BsdSockets.hpp"
 #elif defined(__CYGWIN__)
 #include "Unix/BsdSockets.hpp"
-#elif defined(__unix__)
+#elif defined(__unix__) || defined(__QNX__) || defined(__linux__)
 #include "Unix/BsdSockets.hpp"
 #elif defined(__APPLE__)
 #include "Unix/BsdSockets.hpp"

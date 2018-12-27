@@ -153,7 +153,7 @@ namespace Platform {
                 return errno;
             }
 
-#if (defined(__MACH__) && defined(__APPLE__)) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__ANDROID__)
+#if (defined(__MACH__) && defined(__APPLE__)) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__ANDROID__) || defined(__QNX__) || defined(__linux__)
 
             inline void disableBrokenPipeSignals()
             {

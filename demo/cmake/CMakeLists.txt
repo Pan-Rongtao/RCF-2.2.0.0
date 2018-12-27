@@ -19,8 +19,7 @@ LINK_DIRECTORIES( ${BIN_PATH} )
 
 SET(
     RCF_DEFINES
-    -DWIN32_LEAN_AND_MEAN
-    -DBOOST_ALL_NO_LIB )
+    -DWIN32_LEAN_AND_MEAN)
 
 SET(
     RCF_INCLUDES 
@@ -35,7 +34,12 @@ ELSEIF(MSVC)
         SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
     ENDIF()
 ELSE()
-    SET(RCF_LIBS pthread dl)
+	IF ("${CMAKE_SYSTEM_NAME}" STREQUAL QNX)
+		add_definitions(-DRCF_FEATURE_IPV6=0)
+		SET(RCF_LIBS socket)
+	ELSE()
+    	SET(RCF_LIBS pthread dl)
+	ENDIF()
 ENDIF()
 
 
