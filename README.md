@@ -9,6 +9,7 @@ RCF2.2
 3、demo/cmake下的CMakeLists.txt，添加修复QNX相关，特别注意add_definitions(-DRCF_FEATURE_IPV6=0)，否则在QNX下有runtime错误，找不到ip，估计无支出IPV6
 4、demo/cmake下的CMakeLists.txt，删除-DBOOST_ALL_NO_LIB，否则vs可能无法编译
 5、include\RCF\util\Platform\OS\BsdSockets.hpp文件，include\RCF\util\Platform\OS\Unix\BsdSockets.hpp文件，src\RCF\ByteOrdering.cpp添加defined(__QNX__)判断以支持QNX环境编译
+6、include\RCF\ClientStub.hpp第491行，添加public关键字，否则mac osx下无法编译通过，把enrol修改为public
 
 
 #编译（boost需自行想办法安装或者编译）

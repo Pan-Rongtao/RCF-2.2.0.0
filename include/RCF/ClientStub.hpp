@@ -488,7 +488,7 @@ namespace RCF {
 
         // Set to true if we need to set the transport protocol without disconnecting.
         bool                        mSetTransportProtocol;  
-
+public:
         void                enrol(
                                 I_Future *pFuture);
 
